@@ -1,0 +1,11 @@
+<ng-container *ngFor="let items of foodItems">
+  <app-child [item]="items" (buyItem)="buyItems($event)"></app-child>
+</ng-container>
+<!-- <form (submit)="onSubmit($event)"> -->
+<input type="number" placeholder="Enter quantity" (change)="onSubmit($event)" />
+<!-- </form> -->
+<app-card></app-card>
+<app-child-call #callMe [showItem]="buy"></app-child-call>
+<button (click)="callToChild()">CAll Me!</button>
+<button (click)="showToChild()">Show</button>
+<button (click)="hideToChild()">Hide</button>
